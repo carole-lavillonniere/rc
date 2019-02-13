@@ -1,0 +1,50 @@
+[user]
+  name = carole-lavillonniere
+  email = carole.lavillonniere@gmail.com
+[color]
+  status = auto
+  branch = auto
+  diff = auto
+[alias]
+  co = checkout
+  ci = commit
+  rb = rebase
+  lg = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative
+  logg = log --oneline --graph --all --decorate=on
+  hub = !echo "https://github.com/`git config remote.origin.url`" | sed "s/git@github.com://g" | xargs open 
+  pulls = !echo "https://github.com/`git config remote.origin.url`/pulls" | sed "s/git@github.com://g" | sed "s/\\\\.git//g" | xargs open 
+  issues = !echo "https://github.com/`git config remote.origin.url`/issues" | sed "s/git@github.com://g" | sed "s/\\\\.git//g" | xargs open
+  projects = !echo "https://github.com/`git config remote.origin.url`/projects" | sed "s/git@github.com://g" | sed "s/\\\\.git//g" | xargs open
+  circle = !echo "https://circleci.com/gh/`git config remote.origin.url`" | sed "s/git@github.com://g" |  sed "s/.git//g" | xargs open
+  pf = push force
+[diff]
+#	external = diff_merge.sh]
+#	tool = diff_merge.sh]
+[core]
+  excludesfile = /Users/carolelavillonniere/.gitignore_global
+  editor = vim
+[diff]
+  tool = opendiff
+	submodule = log
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[merge]
+  tool = opendiff
+[push]
+  default = current
+[credential]
+  helper = osxkeychain
+[mergetool]
+  keepBackup = false
+[pull]
+  rebase = true
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[pager]
+ diff = diff-so-fancy | less --tabs=1,5 -RFX
+ show = diff-so-fancy | less --tabs=1,5 -RFX
