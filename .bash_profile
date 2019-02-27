@@ -1,3 +1,4 @@
+source ~/.env
 source ~/.bashrc
 source ~/.profile
 eval "$(rbenv init -)"
@@ -5,7 +6,6 @@ export GOPATH=$HOME/go-home
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/opt/kibana@5.6/bin:$PATH"
 export PATH="/Users/carolelavillonniere/Documents/idagio/fff:$PATH"
-
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
