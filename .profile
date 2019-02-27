@@ -35,4 +35,8 @@ alias cdfav='cd ~/Documents/idagio/idagio-favorites-service'
 alias cdpop='cd ~/Documents/idagio/idagio-popularity-sandbox'
 alias cdreco='cd ~/go-home/src/github.com/idagio/idagio-reco-service'
 
+# Limitations:
+# - Only the default branch is considered (usually master)
+alias lastweek="date -u --date='7 days ago' +%Y-%m-%d | xargs -I {} curl -u $GITHUB_USERNAME:$GITHUB_API_TOKEN -H 'Accept: application/vnd.github.cloak-preview' \"https://api.github.com/search/commits?q=author:$GITHUB_USERNAME+committer-date:>{}&sort=committer-date&order=desc\" | jq '.items[] | {url: .html_url, message: .commit.message}'"
+
 [[ -s "/Users/carolelavillonniere/.gvm/scripts/gvm" ]] && source "/Users/carolelavillonniere/.gvm/scripts/gvm"
