@@ -35,6 +35,9 @@ alias cdtrackingspec='cd ~/Documents/idagio/idagio-tracking-spec'
 alias cdfav='cd ~/Documents/idagio/idagio-favorites-service'
 alias cdpop='cd ~/Documents/idagio/idagio-popularity-sandbox'
 alias cdreco='cd ~/go-home/src/github.com/idagio/idagio-reco-service'
+alias cdios='cd ~/Documents/idagio/idagio-ios'
+alias cdrc='cd ~/Documents/idagio/carolerc'
+alias cdplaylists='cd ~/Documents/idagio/idagio-playlists-service'
 
 # Limitations:
 # - Only the default branch is considered (usually master)
