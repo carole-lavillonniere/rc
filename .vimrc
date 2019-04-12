@@ -131,7 +131,7 @@ set autoread
 " Change page before reaching last line
 set scrolloff=3
 
-" Replace word under cursor
+" Replace word under cursor with leader+s
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Keep window position when switching buffers
