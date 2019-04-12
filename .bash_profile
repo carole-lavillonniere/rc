@@ -35,3 +35,9 @@ if [ -e .nvmrc ]; then
   nvm use
 fi
 
+# Setup for Postgresql@10
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+export PGHOST=localhost
+export LDFLAGS="-L/usr/local/opt/postgresql@10/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@10/include"
+export PKG_CONFIG_PATH="/usr/local/opt/postgresql@10/lib/pkgconfig"
