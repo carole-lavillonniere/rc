@@ -33,6 +33,8 @@ augroup filetype_go
   autocmd!
   au BufWritePre *.go :GoImports
 augroup END
+let g:go_info_mode = 'guru'
+let g:go_auto_type_info = 1
 
 set directory=/tmp
 set number
