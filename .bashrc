@@ -10,6 +10,9 @@ source ~/git-completion.bash
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+export GIT_EDITOR=vim
+export VISUAL=vim
+export EDITOR=vim
 
 # Zsh-like autocompletion
 bind 'set show-all-if-ambiguous on'
