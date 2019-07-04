@@ -6,8 +6,6 @@ eval "$(direnv hook bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-source ~/git-completion.bash
-
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 export GIT_EDITOR=vim

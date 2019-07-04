@@ -41,3 +41,6 @@ export PGHOST=localhost
 export LDFLAGS="-L/usr/local/opt/postgresql@10/lib"
 export CPPFLAGS="-I/usr/local/opt/postgresql@10/include"
 export PKG_CONFIG_PATH="/usr/local/opt/postgresql@10/lib/pkgconfig"
+
+# Bash Git completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
