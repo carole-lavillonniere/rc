@@ -144,3 +144,9 @@ set scrolloff=3
 " Keep window position when switching buffers
 au BufLeave * let b:winview = winsaveview()
 au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+
+" Set typescript filetype
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.ts set filetype=typescript
+augroup END
