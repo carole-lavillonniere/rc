@@ -17,6 +17,7 @@ alias edkibana='sudo vim ~/Applications/kibana-5.6.9-darwin-x86_64/config/kibana
 alias restartkibana='brew services restart kibana@5.6'
 alias restartelasticsearch='brew services restart elasticsearch@5.6'
 alias lgme='git lg -500 | egrep " [Cc]arole[-_ ][Ll]avillonniere\)"'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # Limitations:
 # - Only the default branch is considered (usually master)
