@@ -1,7 +1,7 @@
 alias ll="ls -lahL"
 alias ls="ls -G -a"
 alias date="gdate"
-alias s='git status '
+alias s='git status -s'
 alias c='git commit '
 alias jvim='jq . | vim +"set ft=json"'
 alias lg='git lg'
