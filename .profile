@@ -18,6 +18,7 @@ alias restartkibana='brew services restart kibana@5.6'
 alias restartelasticsearch='brew services restart elasticsearch@5.6'
 alias lgme='git lg -500 | egrep " [Cc]arole[-_ ][Ll]avillonniere\)"'
 alias ctags="`brew --prefix`/bin/ctags -R --exclude=.git --exclude=node_modules --exclude=.meteor"
+alias cdrc='cd $HOME/Documents/Workspaces/carolerc'
 
 # Limitations:
 # - Only the default branch is considered (usually master)
