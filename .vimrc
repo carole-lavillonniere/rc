@@ -19,6 +19,8 @@ Plug 'w0rp/ale' " linting
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'mileszs/ack.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi' " Typescript (completion, navigation etc)
 
 " Initialize plugin system
 call plug#end()
