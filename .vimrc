@@ -166,3 +166,6 @@ highlight ALEWarning ctermbg=DarkRed
 highlight ALEError ctermbg=DarkRed
 highlight ALEWarningSign ctermbg=DarkRed
 highlight ALEErrorSign ctermbg=DarkRed
+
+" Nerd commenter settings
+let g:NERDSpaceDelims = 1
