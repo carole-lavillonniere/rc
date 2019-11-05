@@ -160,3 +160,9 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
+
+" ALE highlight colors
+highlight ALEWarning ctermbg=DarkRed
+highlight ALEError ctermbg=DarkRed
+highlight ALEWarningSign ctermbg=DarkRed
+highlight ALEErrorSign ctermbg=DarkRed
