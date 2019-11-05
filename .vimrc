@@ -26,7 +26,7 @@ Plug 'Quramy/tsuquyomi' " Typescript (completion, navigation etc)
 call plug#end()
 
 set t_Co=256
-colorscheme ChocolateLiquor
+colorscheme molokai
 
 let mapleader = ","
 let maplocalleader = ","
