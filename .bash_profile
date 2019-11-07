@@ -43,4 +43,6 @@ export CPPFLAGS="-I/usr/local/opt/postgresql@10/include"
 export PKG_CONFIG_PATH="/usr/local/opt/postgresql@10/lib/pkgconfig"
 
 # Bash Git completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
