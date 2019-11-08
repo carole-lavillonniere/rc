@@ -31,10 +31,6 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 
-if [ -e .nvmrc ]; then
-  nvm use
-fi
-
 # Setup for Postgresql@10
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 export PGHOST=localhost
@@ -46,3 +42,4 @@ export PKG_CONFIG_PATH="/usr/local/opt/postgresql@10/lib/pkgconfig"
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
+
