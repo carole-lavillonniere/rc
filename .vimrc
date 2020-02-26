@@ -22,6 +22,9 @@ Plug 'mileszs/ack.vim'
 Plug 'leafgarland/typescript-vim' " Typescript Syntax files
 Plug 'Quramy/tsuquyomi' " Typescript (completion, navigation etc)
 Plug 'peitalin/vim-jsx-typescript' " Typescript/React/JSX syntax highlighting
+Plug 'vim-scripts/paredit.vim' " Brackets insertion
+Plug 'tpope/vim-fireplace' " Clojure
+Plug 'tpope/vim-salve' " Support for Leiningen
 
 " Initialize plugin system
 call plug#end()
