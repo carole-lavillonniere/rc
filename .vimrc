@@ -19,8 +19,9 @@ Plug 'w0rp/ale' " linting
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'mileszs/ack.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim' " Typescript Syntax files
 Plug 'Quramy/tsuquyomi' " Typescript (completion, navigation etc)
+Plug 'peitalin/vim-jsx-typescript' " Typescript/React/JSX syntax highlighting
 
 " Initialize plugin system
 call plug#end()
@@ -149,17 +150,22 @@ set scrolloff=3
 au BufLeave * let b:winview = winsaveview()
 au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 
-" Set typescript filetype
 augroup FiletypeGroup
   autocmd!
-  au BufNewFile,BufRead *.ts,*.tsx set filetype=typescript
+  au BufNewFile,BufRead *.ts set filetype=typescript
 augroup END
+
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " ALE lint only on save
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
+let g:ale_linters_explicit = 1
 
 " ALE highlight colors
 highlight ALEWarning ctermbg=DarkRed
