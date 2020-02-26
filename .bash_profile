@@ -7,10 +7,6 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/opt/kibana@5.6/bin:$PATH"
 export PATH="/Users/carolelavillonniere/Documents/idagio/fff:$PATH"
 
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
 export PS1='\[\033[0;36m\]\w\[\033[0;32m\] - ($(git branch 2>/dev/null | grep "^*" | colrm 1 2)) \[\033[0m\033[0;32m\]\[\033[0m\]'
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
