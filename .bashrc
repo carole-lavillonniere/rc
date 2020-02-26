@@ -78,5 +78,3 @@ cdnvm(){
     fi
 }
 alias cd='cdnvm'
-
-cd $HOME/Documents/Workspaces/LegalOS/V1
