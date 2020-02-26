@@ -1,5 +1,5 @@
 alias ll="ls -lahL"
-alias ls="ls -G -a"
+alias ls="ls -G -a -1"
 alias date="gdate"
 alias s='git status -s'
 alias c='git commit '
