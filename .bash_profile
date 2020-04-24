@@ -10,6 +10,18 @@ export PATH="/Users/carolelavillonniere/Documents/idagio/fff:$PATH"
 export PS1='\[\033[0;36m\]\w\[\033[0;32m\] - ($(git branch 2>/dev/null | grep "^*" | colrm 1 2)) \[\033[0m\033[0;32m\]\[\033[0m\]'
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+
+is_in_git_repo() {
+  git rev-parse HEAD > /dev/null 2>&1
+}
+
+fzf-git-status() {
+  is_in_git_repo || return
+  s | fzf-tmux | awk  '{print $2}'
+}
+bind '"\C-f": "$(fzf-git-status)\e\C-e\er"'
+
 # added by Anaconda3 5.3.0 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -38,4 +50,3 @@ export PKG_CONFIG_PATH="/usr/local/opt/postgresql@10/lib/pkgconfig"
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
-
