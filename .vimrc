@@ -14,6 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install -all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'tpope/vim-surround'
 Plug 'vim-scripts/The-NERD-Commenter'
 Plug 'w0rp/ale' " linting
 Plug 'airblade/vim-gitgutter'
@@ -22,9 +23,10 @@ Plug 'mileszs/ack.vim'
 Plug 'leafgarland/typescript-vim' " Typescript Syntax files
 Plug 'Quramy/tsuquyomi' " Typescript (completion, navigation etc)
 Plug 'peitalin/vim-jsx-typescript' " Typescript/React/JSX syntax highlighting
-Plug 'vim-scripts/paredit.vim' " Brackets insertion
 Plug 'tpope/vim-fireplace' " Clojure
 Plug 'tpope/vim-salve' " Support for Leiningen
+Plug 'guns/vim-clojure-static' " Clj indentation + syntax highlighting
+Plug 'kien/rainbow_parentheses.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -178,3 +180,29 @@ highlight ALEErrorSign ctermbg=DarkRed
 
 " Nerd commenter settings
 let g:NERDSpaceDelims = 1
+
+runtime macros/matchit.vim
+
+" Rainbow parenthesis on
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['lightgray',   'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
