@@ -2,7 +2,15 @@ alias ll="ls -lahL"
 alias ls="ls -G -a -1"
 alias date="gdate"
 alias s='git status -s'
-alias c='git commit '
+alias c='git commit'
+alias gcp='git cherry-pick'
+alias gr='git rebase'
+alias gri='git rebase -i'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gsa='git stash --include-untracked'
+alias gsu='git stash save --keep-index'
+alias gsp='git stash pop'
 alias jvim='jq . | vim +"set ft=json"'
 alias lg='git lg'
 alias gfiles='git show --pretty="format:" --name-only'
