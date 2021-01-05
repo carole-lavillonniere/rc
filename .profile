@@ -39,5 +39,3 @@ alias killbuild='lsof -i :3000 | grep node | head -n 1 | awk "{print \$2}" | xar
 alias lastweek="date -u --date='7 days ago' +%Y-%m-%d | xargs -I {} curl -u $GITHUB_USERNAME:$GITHUB_API_TOKEN -H 'Accept: application/vnd.github.cloak-preview' \"https://api.github.com/search/commits?q=author:$GITHUB_USERNAME+committer-date:>{}&sort=committer-date&order=desc\" | jq '.items[] | {url: .html_url, message: .commit.message}'"
 
 [[ -s "/Users/carolelavillonniere/.gvm/scripts/gvm" ]] && source "/Users/carolelavillonniere/.gvm/scripts/gvm"
-
-cdlos
