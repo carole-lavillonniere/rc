@@ -50,3 +50,5 @@ export PKG_CONFIG_PATH="/usr/local/opt/postgresql@10/lib/pkgconfig"
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
+
+complete -C /usr/local/bin/packer packer

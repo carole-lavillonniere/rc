@@ -78,3 +78,5 @@ cdnvm(){
     fi
 }
 alias cd='cdnvm'
+
+complete -C /usr/local/bin/terraform terraform

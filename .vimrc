@@ -27,6 +27,7 @@ Plug 'tpope/vim-fireplace' " Clojure
 Plug 'tpope/vim-salve' " Support for Leiningen
 Plug 'guns/vim-clojure-static' " Clj indentation + syntax highlighting
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'hashivim/vim-terraform'
 
 " Initialize plugin system
 call plug#end()
@@ -162,6 +163,10 @@ augroup END
 
 " set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.hcl set filetype=terraform
+augroup END
 
 " ALE lint only on save
 let g:ale_lint_on_text_changed = 0
@@ -206,3 +211,13 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" Terraform and Packer
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
+augroup filetype_hcl
+  autocmd!
+  au BufWritePre *.hcl :TerraformFmt
+augroup END
+
