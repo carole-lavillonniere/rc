@@ -27,6 +27,8 @@ Plug 'tpope/vim-fireplace' " Clojure
 Plug 'tpope/vim-salve' " Support for Leiningen
 Plug 'guns/vim-clojure-static' " Clj indentation + syntax highlighting
 Plug 'kien/rainbow_parentheses.vim'
+" Gutentags is causing the insertion of hjkl characters on the screen
+Plug 'ludovicchabant/vim-gutentags' " Ctags regeneration
 Plug 'hashivim/vim-terraform'
 
 " Initialize plugin system
