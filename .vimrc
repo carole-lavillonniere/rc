@@ -64,12 +64,16 @@ set backspace=indent,eol,start
 set hlsearch
 set clipboard=unnamed
 
-" Highlight cursor line in active window
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
-augroup END
+" Cursor line is too slow 
+set nocursorline nocursorcolumn
+
+function! Flash()
+    set cursorline cursorcolumn
+    redraw
+    sleep 100m
+    set nocursorline nocursorcolumn
+endfunction
+nnoremap <leader>fl :call Flash()<CR>
 
 " Status line
 set laststatus=2
