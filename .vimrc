@@ -21,15 +21,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'mileszs/ack.vim'
 Plug 'leafgarland/typescript-vim' " Typescript Syntax files
-Plug 'Quramy/tsuquyomi' " Typescript (completion, navigation etc)
-Plug 'peitalin/vim-jsx-typescript' " Typescript/React/JSX syntax highlighting
+Plug 'quramy/tsuquyomi' " Typescript (completion, navigation etc)
+Plug 'peitalin/vim-jsx-typescript' " TSX/JSX syntax highlighting
 Plug 'tpope/vim-fireplace' " Clojure
 Plug 'tpope/vim-salve' " Support for Leiningen
 Plug 'guns/vim-clojure-static' " Clj indentation + syntax highlighting
 Plug 'kien/rainbow_parentheses.vim'
 " Gutentags is causing the insertion of hjkl characters on the screen
 Plug 'ludovicchabant/vim-gutentags' " Ctags regeneration
+Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
+Plug 'ap/vim-css-color'
 Plug 'hashivim/vim-terraform'
+Plug 'psychollama/further.vim' " Follow JavaScript imports to their source
 
 " Initialize plugin system
 call plug#end()
@@ -55,6 +58,11 @@ augroup filetype_go
 augroup END
 let g:go_info_mode = 'guru'
 let g:go_auto_type_info = 1
+
+" JS imports
+let g:js_file_import_sort_after_insert = 1
+let g:js_file_import_string_quote = '"'
+let g:js_file_import_use_fzf = 1
 
 set directory=/tmp
 set number
@@ -192,8 +200,9 @@ augroup FiletypeGroup
   au BufNewFile,BufRead *.ts set filetype=typescript
 augroup END
 
-" set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
 augroup FiletypeGroup
   autocmd!
   au BufNewFile,BufRead *.hcl set filetype=terraform
