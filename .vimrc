@@ -179,8 +179,7 @@ nnoremap <silent> ]B :blast<CR>
 set ignorecase
 set smartcase
 
-" Ignore node modules
-set wildignore+=**/node_modules/**
+set wildignore+=**/.meteor/**
 
 " Automatically read changed file
 set autoread
