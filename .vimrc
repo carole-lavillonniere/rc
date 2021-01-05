@@ -9,8 +9,7 @@ endif
 
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install -all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive' " Git wrapper
