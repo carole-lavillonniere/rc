@@ -32,6 +32,7 @@ Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 Plug 'ap/vim-css-color'
 Plug 'hashivim/vim-terraform'
 Plug 'psychollama/further.vim' " Follow JavaScript imports to their source
+Plug 'fatih/vim-go'
 
 " Initialize plugin system
 call plug#end()
@@ -55,8 +56,13 @@ augroup filetype_go
   autocmd!
   au BufWritePre *.go :GoImports
 augroup END
-let g:go_info_mode = 'guru'
 let g:go_auto_type_info = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_function_calls = 1
 
 " JS imports
 let g:js_file_import_sort_after_insert = 1
