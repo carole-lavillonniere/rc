@@ -78,16 +78,7 @@ set backspace=indent,eol,start
 set hlsearch
 set clipboard=unnamed
 
-" Cursor line is too slow 
-set nocursorline nocursorcolumn
-
-function! Flash()
-    set cursorline cursorcolumn
-    redraw
-    sleep 100m
-    set nocursorline nocursorcolumn
-endfunction
-nnoremap <leader>fl :call Flash()<CR>
+set cursorline cursorcolumn
 
 " Status line
 set laststatus=2
