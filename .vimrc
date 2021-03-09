@@ -90,7 +90,7 @@ set backspace=indent,eol,start
 set hlsearch
 set clipboard=unnamed
 
-set cursorline cursorcolumn
+set cursorline nocursorcolumn
 
 " CoC extensions
 let g:coc_global_extensions = [
