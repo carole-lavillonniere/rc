@@ -11,31 +11,41 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/The-NERD-Commenter'
 Plug 'w0rp/ale' " linting
-Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'mileszs/ack.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'ludovicchabant/vim-gutentags' " Ctags regeneration
+
+" Git
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'airblade/vim-gitgutter'
+
+" JS TS CSS GQL
 Plug 'leafgarland/typescript-vim' " Typescript Syntax files
-Plug 'quramy/tsuquyomi' " Typescript (completion, navigation etc)
 Plug 'peitalin/vim-jsx-typescript' " TSX/JSX syntax highlighting
+" Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
+Plug 'ap/vim-css-color'
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'} " Use FZF instead of coc.nvim built-in fuzzy finder
+
+" Clojure
 Plug 'tpope/vim-fireplace' " Clojure
 Plug 'tpope/vim-salve' " Support for Leiningen
 Plug 'guns/vim-clojure-static' " Clj indentation + syntax highlighting
-Plug 'kien/rainbow_parentheses.vim'
-" Gutentags is causing the insertion of hjkl characters on the screen
-Plug 'ludovicchabant/vim-gutentags' " Ctags regeneration
-Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
-Plug 'ap/vim-css-color'
+
+" Terraform
 Plug 'hashivim/vim-terraform'
-Plug 'psychollama/further.vim' " Follow JavaScript imports to their source
+
+" Go
 Plug 'fatih/vim-go'
-Plug 'itchyny/lightline.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -224,30 +234,6 @@ highlight ALEErrorSign ctermbg=DarkRed
 let g:NERDSpaceDelims = 1
 
 runtime macros/matchit.vim
-
-" Rainbow parenthesis on
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['lightgray',   'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 " Terraform and Packer
 let g:terraform_align=1
