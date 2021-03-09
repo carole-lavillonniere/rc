@@ -59,6 +59,7 @@ let maplocalleader = ","
 " FZF
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>f :Files<CR>
+nmap <Leader>c :Commands<CR>
 set rtp+=/usr/local/opt/fzf
 
 " Go auto import
