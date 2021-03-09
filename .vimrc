@@ -22,6 +22,8 @@ Plug 'mileszs/ack.vim'
 Plug 'leafgarland/typescript-vim' " Typescript Syntax files
 Plug 'quramy/tsuquyomi' " Typescript (completion, navigation etc)
 Plug 'peitalin/vim-jsx-typescript' " TSX/JSX syntax highlighting
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'} " Use FZF instead of coc.nvim built-in fuzzy finder
 Plug 'tpope/vim-fireplace' " Clojure
 Plug 'tpope/vim-salve' " Support for Leiningen
 Plug 'guns/vim-clojure-static' " Clj indentation + syntax highlighting
@@ -79,6 +81,20 @@ set hlsearch
 set clipboard=unnamed
 
 set cursorline cursorcolumn
+
+" CoC extensions
+let g:coc_global_extensions = [
+      \'coc-tsserver',]
+
+" Coc Code navigation
+nmap <Leader>d <Plug>(coc-definition)
+nmap <Leader>y <Plug>(coc-type-definition)
+nmap <Leader>i <Plug>(coc-implementation)
+nmap <Leader>r <Plug>(coc-references)
+
+" Coc imports
+nmap <Leader>a :CocCommand tsserver.executeAutofix<CR>
+nmap <Leader>o :CocCommand tsserver.organizeImports<CR>
 
 " Status line
 set laststatus=2
