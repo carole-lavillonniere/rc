@@ -110,13 +110,23 @@ nmap <Leader>o :CocCommand tsserver.organizeImports<CR>
 " Status line
 set laststatus=2
 
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
+
 let g:lightline = {
       \ 'colorscheme': 'solarized dark',
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'ctags', 'fileformat', 'fileencoding', 'filetype' ] ],
       \ 'component_function': {
-      \   'ctags': 'gutentags#statusline()'
+      \   'ctags': 'gutentags#statusline()',
+      \   'filename': 'LightlineFilename',
       \ },
       \ }
 
