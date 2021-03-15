@@ -255,3 +255,5 @@ augroup filetype_hcl
   au BufWritePre *.hcl :TerraformFmt
 augroup END
 
+" . works in visual mode too
+xnoremap . :norm.<CR>
