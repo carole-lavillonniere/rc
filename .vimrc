@@ -47,6 +47,10 @@ Plug 'hashivim/vim-terraform'
 " Go
 Plug 'fatih/vim-go'
 
+" Tmux 
+" FocusGained and FocusLost autocommand events are not working in terminal vim. This plugin restores them when using vim inside Tmux.
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 " Initialize plugin system
 call plug#end()
 
@@ -200,9 +204,6 @@ set smartcase
 
 set wildignore+=**/.meteor/**
 
-" Automatically read changed file
-set autoread
-
 " Change page before reaching last line
 set scrolloff=3
 
@@ -257,3 +258,7 @@ augroup END
 
 " . works in visual mode too
 xnoremap . :norm.<CR>
+
+" Check if any buffers were changed outside of Vim. This checks and warns you
+" if you would end up with two versions of a file.
+au CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
