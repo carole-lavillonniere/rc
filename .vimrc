@@ -179,9 +179,9 @@ autocmd BufWinLeave * call clearmatches()
 highlight Pmenu ctermfg=0 ctermbg=DarkGrey guibg=Magenta
 highlight PmenuSel ctermfg=242 ctermbg=13 guibg=DarkGrey
 
-" Autocomplete menu (like zsh)
+" Autocomplete menu
 set wildmenu
-set wildmode=full
+set wildmode=list,full
 
 " Remap arrow keys to do nothing
 noremap <Up> <Nop>
