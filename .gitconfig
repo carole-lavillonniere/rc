@@ -17,6 +17,7 @@
   projects = !echo "https://github.com/`git config remote.origin.url`/projects" | sed "s/git@github.com://g" | sed "s/\\\\.git//g" | xargs open
   circle = !echo "https://circleci.com/gh/`git config remote.origin.url`" | sed "s/git@github.com://g" |  sed "s/.git//g" | xargs open
   pf = push force
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [diff]
 #	external = diff_merge.sh]
 #	tool = diff_merge.sh]
