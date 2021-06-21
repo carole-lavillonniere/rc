@@ -51,6 +51,9 @@ Plug 'fatih/vim-go'
 " FocusGained and FocusLost autocommand events are not working in terminal vim. This plugin restores them when using vim inside Tmux.
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
+" Display thin vertical lines at each indentation level for code indented with spaces
+Plug 'Yggdroot/indentLine'
+
 " Initialize plugin system
 call plug#end()
 
@@ -228,11 +231,13 @@ augroup FiletypeGroup
 augroup END
 
 " ALE lint only on save
-let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 
 let g:ale_linters_explicit = 1
 
@@ -262,3 +267,10 @@ xnoremap . :norm.<CR>
 " Check if any buffers were changed outside of Vim. This checks and warns you
 " if you would end up with two versions of a file.
 au CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
+
+" Matching parenthesis highlighting 
+" (background only to avoid confusion with cursor)
+hi MatchParen ctermfg=208 ctermbg=bg
+
+" yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
