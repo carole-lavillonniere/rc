@@ -1,0 +1,4 @@
+XKBLAYOUT=us,gb
+XKBVARIANT=,
+BACKSPACE=guess
+XKBOPTIONS="ctrl:nocaps"
