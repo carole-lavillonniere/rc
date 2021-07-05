@@ -1,0 +1,4 @@
+rofi.modi: combi
+rofi.combi-modi: window,ssh,drun,run
+rofi.lines: 15
+rofi.show-icons: true
