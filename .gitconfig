@@ -18,14 +18,11 @@
   circle = !echo "https://circleci.com/gh/`git config remote.origin.url`" | sed "s/git@github.com://g" |  sed "s/.git//g" | xargs open
   pf = push force
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-[diff]
-#	external = diff_merge.sh]
-#	tool = diff_merge.sh]
 [core]
   excludesfile = ~/.gitignore_global
   editor = vim
 [diff]
-  tool = opendiff
+	tool = vimdiff
 	submodule = log
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -33,7 +30,7 @@
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
 [merge]
-  tool = opendiff
+	tool = vimdiff
 [push]
   default = current
 [credential]
