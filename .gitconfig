@@ -22,7 +22,7 @@
 #	external = diff_merge.sh]
 #	tool = diff_merge.sh]
 [core]
-  excludesfile = /Users/carolelavillonniere/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = vim
 [diff]
   tool = opendiff

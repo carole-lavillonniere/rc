@@ -4,3 +4,4 @@
 *.envrc
 tags
 .gutctags
+aws_token
