@@ -181,3 +181,12 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+focus_follows_mouse no
+
+# Start some apps
+exec "/home/firefox/firefox"
+exec "slack"
+
+# Load workspaces config
+exec --no-startup-id "i3-msg 'workspace $ws1; append_layout ~/Workspaces/rc/i3-workspaces.json'"

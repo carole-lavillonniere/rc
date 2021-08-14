@@ -1,0 +1,37 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "marks": [],
+    "name": "Firefox Nightly",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Nightly$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1041,
+       "width": 956,
+       "x": 962,
+       "y": 18
+    },
+    "marks": [],
+    "name": "Slack",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Slack$"
+       }
+    ],
+    "type": "con"
+}
+
