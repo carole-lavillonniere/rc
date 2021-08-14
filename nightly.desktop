@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Nightly
+Comment=Browse the World Wide Web
+Icon=/home/firefox/browser/chrome/icons/default/default128.png
+Exec=/home/firefox/firefox %u
+Terminal=false
+Type=Application
