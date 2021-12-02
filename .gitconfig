@@ -33,8 +33,6 @@
 	tool = vimdiff
 [push]
   default = current
-[credential]
-  helper = osxkeychain
 [mergetool]
   keepBackup = false
 [pull]
@@ -43,6 +41,7 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
-[pager]
- diff = diff-so-fancy | less --tabs=1,5 -RFX
- show = diff-so-fancy | less --tabs=1,5 -RFX
+[url "https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com"]
+  insteadOf = https://github.com
+[url "https://:@github.com"]
+	insteadOf = https://github.com
