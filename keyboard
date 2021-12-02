@@ -1,4 +1,4 @@
 XKBLAYOUT=us,gb
-XKBVARIANT=intl
+XKBVARIANT=altgr-intl
 BACKSPACE=guess
 XKBOPTIONS="ctrl:nocaps"
