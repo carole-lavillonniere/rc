@@ -17,7 +17,7 @@ Plug 'w0rp/ale' " linting
 Plug 'flazz/vim-colorschemes'
 Plug 'mileszs/ack.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'ludovicchabant/vim-gutentags' " Ctags regeneration
+" Plug 'ludovicchabant/vim-gutentags' " Ctags regeneration
 
 " Git
 Plug 'tpope/vim-git'
@@ -51,8 +51,11 @@ Plug 'fatih/vim-go'
 " FocusGained and FocusLost autocommand events are not working in terminal vim. This plugin restores them when using vim inside Tmux.
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-" Display thin vertical lines at each indentation level for code indented with spaces
-Plug 'Yggdroot/indentLine'
+" allows you to use <Tab> for insert completion
+Plug 'ervandew/supertab'
+
+" Dockerfiles syntax
+Plug 'ekalinin/Dockerfile.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -84,6 +87,11 @@ let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_function_calls = 1
+let g:go_decls_mode = 'fzf'
+
+" Go debugging
+:nnoremap <leader>p :GoDebugBreakpoint<CR>
+:nnoremap <C-v><F1> :GoDebugContinue<CR>
 
 " JS imports
 let g:js_file_import_sort_after_insert = 1
@@ -96,7 +104,8 @@ set ruler
 set title
 set backspace=indent,eol,start
 set hlsearch
-set clipboard=unnamed
+" automatically use the system clipboard for copy and paste
+set clipboard=unnamedplus
 
 set cursorline nocursorcolumn
 
@@ -227,7 +236,7 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 augroup FiletypeGroup
   autocmd!
-  au BufNewFile,BufRead *.hcl set filetype=terraform
+  au BufNewFile,BufRead *.hcl,*.tf set filetype=terraform
 augroup END
 
 " ALE lint only on save
