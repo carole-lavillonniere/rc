@@ -260,3 +260,6 @@ alias screenshot='flameshot gui'
 source ~/.env
 
 git config --global url."https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
+# Add fonts
+xset +fp /home/carolavillo/.fonts
+xset fp rehash
