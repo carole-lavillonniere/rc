@@ -42,6 +42,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# default window borders
+default_border pixel 1
+default_floating_border pixel 1
+
+# Hides vertical and horizontal borders when there's only one window.
+hide_edge_borders both
+
 # start a terminal
 bindsym $mod+Return exec "/home/carolavillo/.cargo/bin/alacritty -o font.size=8"
 
