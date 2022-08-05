@@ -142,9 +142,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH="/usr/local/opt/kibana@5.6/bin:$PATH"
-
-export PS1='\[\033[0;36m\]\w\[\033[0;32m\] - ($(git branch 2>/dev/null | grep "^*" | colrm 1 2)) \[\033[0m\033[0;32m\]\[\033[0m\]'
-
 export PATH=$PATH:$HOME/.cargo/bin
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
@@ -259,6 +256,10 @@ alias screenshot='flameshot gui'
 source ~/.env
 
 git config --global url."https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
+
+# Startship shell prompt
+eval "$(starship init bash)"
+
 # Add fonts
 xset +fp /home/carolavillo/.fonts
 xset fp rehash
