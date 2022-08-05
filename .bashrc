@@ -207,7 +207,6 @@ fi
 
 alias ll="ls -lahL"
 alias ls="ls -G -a -1"
-alias date="gdate"
 alias s='git status -s'
 alias c='git commit'
 alias gcp='git cherry-pick'
@@ -230,7 +229,6 @@ alias publickeycopy='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias cat='batcat'
 alias gpr='hub pull-request'
 alias timeout='gtimeout'
-alias date='gdate'
 alias edkibana='sudo vim ~/Applications/kibana-5.6.9-darwin-x86_64/config/kibana.yml'
 alias restartelastic='sudo systemctl restart elasticsearch.service'
 alias restartkibana='sudo systemctl restart kibana.service'
