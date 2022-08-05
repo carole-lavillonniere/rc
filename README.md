@@ -30,3 +30,6 @@ The packages can then be installed with:
 ```
 sudo aptitude update && cat pkglist | xargs sudo aptitude install -y
 ```
+
+### Low battery warning
+Install https://github.com/rjekker/i3-battery-popup/blob/master/i3-battery-popup
