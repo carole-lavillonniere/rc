@@ -145,6 +145,7 @@ export PATH="/usr/local/opt/kibana@5.6/bin:$PATH"
 
 export PS1='\[\033[0;36m\]\w\[\033[0;32m\] - ($(git branch 2>/dev/null | grep "^*" | colrm 1 2)) \[\033[0m\033[0;32m\]\[\033[0m\]'
 
+export PATH=$PATH:$HOME/.cargo/bin
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 is_in_git_repo() {

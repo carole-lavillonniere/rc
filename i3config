@@ -43,7 +43,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal $(xcwd)
+bindsym $mod+Return exec "/home/carolavillo/.cargo/bin/alacritty -o font.size=8"
 
 # kill focused window
 bindsym $mod+q kill
