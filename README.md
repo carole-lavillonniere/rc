@@ -16,6 +16,7 @@ sudo ln -s $HOME/Workspaces/rc/touchpad.conf  /etc/X11/xorg.conf.d/touchpad.conf
 sudo ln -s $HOME/Workspaces/rc/yamllint  ~/.config/yamllint/config
 sudo ln -s $HOME/Workspaces/rc/nightly.desktop  $HOME/
 sudo ln -s $HOME/Workspaces/rc/polybar ~/.config/polybar
+sudo ln -s $HOME/Workspaces/rc/.psqlrc ~/.psqlrc
 
 ```
 
