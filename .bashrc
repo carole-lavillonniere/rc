@@ -145,14 +145,7 @@ export PATH="/usr/local/opt/kibana@5.6/bin:$PATH"
 export PATH=$PATH:$HOME/.cargo/bin
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
-is_in_git_repo() {
-  git rev-parse HEAD > /dev/null 2>&1
-}
-
-fzf-git-status() {
-  is_in_git_repo || return
-  s | fzf-tmux | awk  '{print $2}'
-}
+alias fzf-git-status="s | fzf-tmux | cut -d' ' -f3"
 bind '"\C-f": "$(fzf-git-status)\e\C-e"'
 
 # added by Anaconda3 5.3.0 installer
