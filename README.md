@@ -1,3 +1,8 @@
+### Dependencies
+
+- xcwd https://github.com/schischi/xcwd
+A simple tool that prints the current working directory of the currently focused window 
+
 ### Symbolic links creation
 
 ```

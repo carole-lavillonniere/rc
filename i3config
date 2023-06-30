@@ -50,7 +50,7 @@ default_floating_border pixel 1
 hide_edge_borders both
 
 # start a terminal
-bindsym $mod+Return exec "/home/carolavillo/.cargo/bin/alacritty -o font.size=8"
+bindsym $mod+Return exec /home/carolavillo/.cargo/bin/alacritty -o font.size=8 --working-directory "`xcwd`"
 
 # kill focused window
 bindsym $mod+q kill
