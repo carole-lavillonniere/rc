@@ -146,6 +146,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH="/usr/local/opt/kibana@5.6/bin:$PATH"
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/usr/pgadmin4/bin
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 alias fzf-git-status="s | fzf-tmux | cut -d' ' -f3"
