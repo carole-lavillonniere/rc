@@ -62,6 +62,8 @@ call plug#end()
 
 set t_Co=256
 colorscheme molokai
+" make comments a bit lighter
+hi Comment ctermfg=246 guifg=#949494
 
 let mapleader = ","
 let maplocalleader = ","
