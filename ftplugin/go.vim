@@ -1,1 +1,1 @@
-let b:ale_linters = ['gopls'] 
+let b:ale_linters = ['golangci-lint']

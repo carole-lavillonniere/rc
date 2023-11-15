@@ -90,6 +90,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_function_calls = 1
 let g:go_decls_mode = 'fzf'
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " Go debugging
 :nnoremap <leader>p :GoDebugBreakpoint<CR>
