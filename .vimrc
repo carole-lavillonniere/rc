@@ -285,3 +285,24 @@ hi MatchParen ctermfg=208 ctermbg=bg
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Terraform Docs
+nmap <leader>t :call TerraformDocs()<CR>
+fun! TerraformDocs()
+    if &ft =~ "terraform"
+      let s:base_url = "https://registry.terraform.io/providers/hashicorp" 
+      let s:tf_version = "latest"
+      let s:type_mapping = {"data": "data-sources", "resource": "resources"}
+      let s:split_line = split(getline("."), " ")
+      let s:type = s:type_mapping[s:split_line[0]]
+      let s:keyword = trim(s:split_line[1], '"')
+      let s:parts = split(s:keyword, "_")
+      let s:provider = s:parts[0]
+      let s:name = join(s:parts[1:], "_")
+      let s:url = join([s:base_url, s:provider, s:tf_version, "docs", s:type, s:name], "/")
+      silent exec "!xdg-open '".s:url."'"
+      silent exec "redra!"
+    else
+      return
+    endif
+endfun
