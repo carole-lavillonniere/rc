@@ -22,11 +22,14 @@ sudo ln -s $HOME/Workspaces/rc/yamllint  ~/.config/yamllint/config
 sudo ln -s $HOME/Workspaces/rc/nightly.desktop  $HOME/
 sudo ln -s $HOME/Workspaces/rc/polybar ~/.config/polybar
 sudo ln -s $HOME/Workspaces/rc/.psqlrc ~/.psqlrc
+sudo ln -s $HOME/Workspaces/rc/.alacritty.toml ~/.alacritty.toml
 
 ```
 
 ### Keyboard variants
 To list all variants for us layout: `localectl list-x11-keymap-variants us`
+
+IBus can also sometimes override settings from /etc/default/keyboard. You can use the ibus-setup command to modify the settings for IBus. To force it to defer to the settings from /etc/default/keyboard, run ibus-setup, go to the Advanced tab, and check Use system keyboard layout.
 
 ### Restore packages
 The file `pkglist` can be re-generated with:
@@ -39,3 +42,14 @@ sudo aptitude update && cat pkglist | xargs sudo aptitude install -y
 
 ### Low battery warning
 Install https://github.com/rjekker/i3-battery-popup/blob/master/i3-battery-popup
+
+
+### Point `docker-compose` to `docker compose`
+
+1. Create a little script /bin/docker-compose
+with content `docker compose "$@"`
+
+2. Make the script executable: sudo chmod +x /bin/docker-compose
+
+3. Check that it works with `docker-compose version`
+
