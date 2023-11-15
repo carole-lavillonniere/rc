@@ -167,8 +167,9 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Display settings
+bindsym $mod+F1 exec "~/.screenlayout/work.sh"
 bindsym $mod+F2 exec "~/.screenlayout/laptop_only.sh"
-bindsym $mod+F3 exec "~/.screenlayout/both.sh"
+bindsym $mod+F3 exec "~/.screenlayout/home.sh"
 
 # Display brightness controls
 # TODO how to edit /sys/class/backlight/intel_backlight/brightnes
