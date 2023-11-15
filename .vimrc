@@ -140,8 +140,8 @@ function! LightlineFilename()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized dark',
-      \   'right': [ [ 'lineinfo' ],
+      \ 'colorscheme': 'solarized',
+      \ 'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'ctags', 'fileformat', 'fileencoding', 'filetype' ] ],
       \ 'component_function': {
