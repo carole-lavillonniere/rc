@@ -33,6 +33,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# battery status
+alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -210,8 +213,10 @@ alias gsa='git stash --include-untracked'
 alias gsu='git stash save --keep-index'
 alias gsp='git stash pop'
 alias gpf='git push -f'
+alias gmt='git mergetool'
 alias jvim='jq . | vim +"set ft=json"'
 alias lg='git lg'
+alias lgraph='git log --graph --pretty'
 alias gfiles='git show --pretty="format:" --name-only'
 alias ag='ag --path-to-ignore ~/.gitignore_global --hidden --ignore-dir .git'
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
