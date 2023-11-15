@@ -41,7 +41,7 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
-[url "https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com"]
-  insteadOf = https://github.com
-[url "https://:@github.com"]
-	insteadOf = https://github.com
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[init]
+	defaultBranch = main
