@@ -49,7 +49,7 @@ Plug 'fatih/vim-go'
 
 " Tmux 
 " FocusGained and FocusLost autocommand events are not working in terminal vim. This plugin restores them when using vim inside Tmux.
-Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " allows you to use <Tab> for insert completion
 Plug 'ervandew/supertab'
