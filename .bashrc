@@ -261,3 +261,7 @@ eval "$(starship init bash)"
 # Add fonts
 xset +fp /home/carolavillo/.fonts
 xset fp rehash
+
+# make aws-vault execute ykman to generate tokens
+# https://github.com/99designs/aws-vault/blob/90c6834e431769acbeb13223dcae996923b8820e/USAGE.md#usage-1
+export AWS_VAULT_PROMPT=ykman
