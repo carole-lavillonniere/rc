@@ -23,6 +23,7 @@ sudo ln -s $HOME/Workspaces/rc/nightly.desktop  $HOME/
 sudo ln -s $HOME/Workspaces/rc/polybar ~/.config/polybar
 sudo ln -s $HOME/Workspaces/rc/.psqlrc ~/.psqlrc
 sudo ln -s $HOME/Workspaces/rc/.alacritty.toml ~/.alacritty.toml
+sudo ln -s $HOME/Workspaces/rc/starship.toml ~/.config/starship.toml
 
 ```
 
