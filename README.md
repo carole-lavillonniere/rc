@@ -9,6 +9,7 @@ A simple tool that prints the current working directory of the currently focused
 sudo ln -s $HOME/Workspaces/rc/.bashrc  ~/.bashrc
 sudo ln -s -f $HOME/Workspaces/rc/.bashrc  ~/.bashrc
 sudo ln -s -f $HOME/Workspaces/rc/.vimrc  ~/.vimrc
+sudo ln -s -f $HOME/Workspaces/rc/nvim/init.vim ~/.config/nvim/init.vim
 sudo ln -s -f $HOME/Workspaces/rc/.gitconfig  ~/.gitconfig
 sudo ln -s -f $HOME/Workspaces/rc/.gitignore_global  ~/.gitignore_global
 sudo ln -s -f $HOME/Workspaces/rc/i3config  ~/.config/i3/config
