@@ -144,10 +144,15 @@ eval "$(rbenv init -)"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
+export GOCACHE=$(go env GOCACHE)
+export GOMODCACHE=$(go env GOMODCACHE)
 export PATH="/usr/local/opt/kibana@5.6/bin:$PATH"
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/usr/pgadmin4/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/opt/nvim-linux-x86_64/bin
+export PATH=$PATH:/home/carolavillo/bin/pycharm-2025.2.2/bin
+export PATH=$PATH:/home/carolavillo/firefox
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 alias fzf-git-status="s | fzf-tmux | cut -d' ' -f3"
@@ -210,12 +215,13 @@ alias grm='git rebase master'
 alias gri='git rebase -i'
 alias gra='git rebase --abort'
 alias grs='git rebase --skip'
-alias grc='git rebase --continue'
+alias grcont='git rebase --continue'
 alias gsa='git stash --include-untracked'
 alias gsu='git stash save --keep-index'
 alias gsp='git stash pop'
 alias gpf='git push -f'
 alias gmt='git mergetool'
+alias gpu='git pull --set-upstream origin $(git branch --show-current)'
 alias jvim='jq . | vim +"set ft=json"'
 alias lg='git lg'
 alias lgraph='git log --graph --pretty'
@@ -225,7 +231,6 @@ alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias publickeycopy='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias cat='batcat'
 alias gpr='hub pull-request'
-alias timeout='gtimeout'
 alias edkibana='sudo vim ~/Applications/kibana-5.6.9-darwin-x86_64/config/kibana.yml'
 alias restartelastic='sudo systemctl restart elasticsearch.service'
 alias restartkibana='sudo systemctl restart kibana.service'
@@ -233,6 +238,9 @@ alias vimkibana='sudo vim /etc/kibana/kibana.yml'
 alias elasticlogspath='echo /var/log/elasticsearch/ && sudo ls /var/log/elasticsearch/'
 alias lgme='git lg -500 | egrep " [Cc]arole[-_ ][Ll]avillonniere\)"'
 alias cdrc='cd $HOME/Workspaces/rc'
+alias cdls='cd $HOME/Workspaces/localstack'
+alias cdlsc='cd $HOME/Workspaces/localstack/localstack'
+alias cdlsp='cd $HOME/Workspaces/localstack/localstack-pro'
 alias killbuild='lsof -i :3000 | grep node | head -n 1 | awk "{print \$2}" | xargs kill -9'
 alias wgup='sudo wg-quick up wg0'
 alias netstat8080="sudo netstat -ltnp | grep -w ':8080'"
@@ -253,6 +261,8 @@ alias kex='kubectl exec  -it'
 
 alias getpods-sse='kubectl --kubeconfig ~/.kube/config.yaml -n sse get pods'
 alias screenshot='flameshot gui'
+alias screensaveroff='xset s off && xset -dpms && xset q'
+alias screensaveron='xset s on && xset +dpms && xset q'
 source ~/.env
 
 git config --global url."https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
@@ -271,3 +281,36 @@ xset fp rehash
 # make aws-vault execute ykman to generate tokens
 # https://github.com/99designs/aws-vault/blob/90c6834e431769acbeb13223dcae996923b8820e/USAGE.md#usage-1
 export AWS_VAULT_PROMPT=ykman
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: gt completion >> ~/.bashrc
+#    or gt completion >> ~/.bash_profile on OSX.
+#
+_gt_yargs_completions()
+{
+    local cur_word args type_list
+
+    cur_word="${COMP_WORDS[COMP_CWORD]}"
+    args=("${COMP_WORDS[@]}")
+
+    # ask yargs to generate completions.
+    type_list=$(gt --get-yargs-completions "${args[@]}")
+
+    COMPREPLY=( $(compgen -W "${type_list}" -- ${cur_word}) )
+
+    # if no match was found, fall back to filename completion
+    if [ ${#COMPREPLY[@]} -eq 0 ]; then
+      COMPREPLY=()
+    fi
+
+    return 0
+}
+complete -o bashdefault -o default -F _gt_yargs_completions gt
+###-end-gt-completions-###
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+export PATH="$HOME/.tfenv/bin:$PATH"

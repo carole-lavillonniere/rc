@@ -28,7 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'leafgarland/typescript-vim' " Typescript Syntax files
 Plug 'peitalin/vim-jsx-typescript' " TSX/JSX syntax highlighting
 " Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
-Plug 'ap/vim-css-color'
+" Plug 'ap/vim-css-color'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'jparise/vim-graphql'        " GraphQL syntax
@@ -45,7 +45,7 @@ Plug 'guns/vim-clojure-static' " Clj indentation + syntax highlighting
 Plug 'hashivim/vim-terraform'
 
 " Go
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'tag': 'v1.28' }
 
 " Tmux 
 " FocusGained and FocusLost autocommand events are not working in terminal vim. This plugin restores them when using vim inside Tmux.
@@ -56,6 +56,8 @@ Plug 'ervandew/supertab'
 
 " Dockerfiles syntax
 Plug 'ekalinin/Dockerfile.vim'
+
+Plug 'github/copilot.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -88,10 +90,13 @@ let g:go_highlight_methods = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_format_strings = 1
-let g:go_highlight_function_calls = 1
+" this freezes vim when opening long go file
+" let g:go_highlight_function_calls = 1
 let g:go_decls_mode = 'fzf'
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+" let g:go_gopls_options = ['-logfile=/home/carolavillo/Workspaces/rc/gopls.log']
+" let g:go_debug=['lsp']
 
 " Go debugging
 :nnoremap <leader>p :GoDebugBreakpoint<CR>
@@ -276,6 +281,10 @@ au CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 " Matching parenthesis highlighting 
 " (background only to avoid confusion with cursor)
 hi MatchParen ctermfg=208 ctermbg=bg
+
+
+let g:matchparen_timeout = 20
+let g:matchparen_insert_timeout = 20
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

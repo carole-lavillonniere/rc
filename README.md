@@ -25,6 +25,7 @@ sudo ln -s $HOME/Workspaces/rc/polybar ~/.config/polybar
 sudo ln -s $HOME/Workspaces/rc/.psqlrc ~/.psqlrc
 sudo ln -s $HOME/Workspaces/rc/.alacritty.toml ~/.alacritty.toml
 sudo ln -s $HOME/Workspaces/rc/starship.toml ~/.config/starship.toml
+sudo ln -s $HOME/Workspaces/rc/.ideavimrc ~/.ideavimrc
 
 ```
 
@@ -55,3 +56,10 @@ with content `docker compose "$@"`
 
 3. Check that it works with `docker-compose version`
 
+
+### Disable screen saver timeout and power saving
+https://askubuntu.com/questions/763994/screen-times-out-in-i3-wm
+
+
+### Copy-pasting with nvim / X11
+`sudo apt install xclip`
