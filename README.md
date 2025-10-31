@@ -26,6 +26,7 @@ sudo ln -s $HOME/Workspaces/rc/.psqlrc ~/.psqlrc
 sudo ln -s $HOME/Workspaces/rc/.alacritty.toml ~/.alacritty.toml
 sudo ln -s $HOME/Workspaces/rc/starship.toml ~/.config/starship.toml
 sudo ln -s $HOME/Workspaces/rc/.ideavimrc ~/.ideavimrc
+sudo ln -s $HOME/Workspaces/rc/profile ~/.profile
 
 ```
 

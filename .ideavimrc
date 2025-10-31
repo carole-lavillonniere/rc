@@ -1,6 +1,10 @@
 let mapleader = ","
 
 map <leader>cc <Action>(CommentByLineComment)
+map <leader>cu <Action>(CommentByLineComment)
+map <leader>f <Action>(GotoFile)
+map <leader>b <Action>(Switcher)
+map <leader>o :source ~/.ideavimrc<cr>
 
 " Disable arrow keys in all modes
 noremap <Up> <Nop>
@@ -18,8 +22,10 @@ vnoremap <Down> <Nop>
 vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 
-map <leader>o :source ~/.ideavimrc<cr>
-
-" Disable mouse scrolling
-set nomouse
+set incsearch
+set smartcase
+set nohlsearch
+set scrolloff=5
+set number
+set clipboard=unnamed,unnamedplus,ideaput
 
